@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h2>Viết gì đi bạn</h2>
+        <textarea id="text" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+</center>
+<script>
+    function typeTextarea(){
+        let a = [n='','B','Ạ','N',' ','Đ','Ã',' ','B','Ị',' ','B','Ắ','T','!' ,'!','!','!',' ',':','v'];
+        console.log(a.length)
+        t = document.getElementById('text').value;
+        j = t.length;
+        if(j > 0)
+        {
+            for(let i=1; i<=j; i++)
+            {
+              n = n + a[i];
+                if(i == 21)
+                {
+                    document.getElementById('text').value ="";
+                    n = "";
+                }
+            }
+        }
+        document.getElementById('text').value = n;
+        n="";
+        setTimeout("typeTextarea()", 1);
+        //return false;
+    }
+</script>
+
+</body>
+</html>
